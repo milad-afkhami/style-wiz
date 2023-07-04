@@ -21,16 +21,7 @@ export const Div = styled(
   } = props;
   return {
     ...convertPropsToStyles(restProps as DivProps),
-    // ...(responsive
-    //   ? __reduce(
-    //       responsiveProps(responsive),
-    //       (res: Dictionary<unknown>, v, k) => {
-    //         res[k] = convertPropsToStyles(v);
-    //         return res;
-    //       },
-    //       {}
-    //     )
-    //   : {}),
+    // ...(responsive ? __reduce( responsiveProps(responsive), (res: Dictionary<unknown>, v, k) => { res[k] = convertPropsToStyles(v); return res; }, {} ) : {}),
     // ...(after ? { "&:after": convertPropsToStyles(after) } : {}),
     // ...(before ? { "&:before": convertPropsToStyles(before) } : {}),
     // ...(hover ? { "&:hover": convertPropsToStyles(hover) } : {}),

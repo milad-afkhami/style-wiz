@@ -28,5 +28,8 @@
     "space-infix-ops": ["error", { "int32Hint": false }],
     "space-before-blocks": ["warn"],
     "arrow-parens": ["warn"]
+  },
+  "env": {
+    "node": true
   }
 }

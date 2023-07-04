@@ -218,27 +218,8 @@ export default interface DivProps extends HTMLAttributes<Element> {
    * 6: justify-content
    */
   grid?: GridProps;
-  /**
-   * controls styles for css :after selector
-   *
-   * @deprecated use `styled` method from `goober` instead
-   */
-  after?: DivProps;
-  /**
-   * controls styles for css :before selector
-   *
-   * @deprecated use `styled` method from `goober` instead
-   */
-  before?: DivProps;
-  /**
-   * controls styles for css :hover selector
-   *
-   * @deprecated use `styled` method from `goober` instead
-   */
-  hover?: DivProps;
   /** controls zooming the element when hovered */
   zoomOnHover?: boolean;
-  responsive?: Partial<ResponsiveProps>;
   /** represents html `style` prop, except it doesn't render props as inline styles */
   css?: CSSAttribute;
   /**
