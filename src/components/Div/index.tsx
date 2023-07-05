@@ -2,7 +2,7 @@ import { styled } from "goober";
 import { forwardRef } from "react";
 // import __reduce from "lodash/reduce";
 // import responsiveProps from "@helpers/responsiveProps";
-import convertPropsToStyles from "./convertPropsToStyles";
+import convertPropsToStyles from "@helpers/convertPropsToStyles";
 import type DivProps from "./props";
 
 export { DivProps };

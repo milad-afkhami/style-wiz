@@ -3,10 +3,15 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-  "testEnvironment": "jsdom",
+  "testEnvironment": "jest-environment-jsdom",
   "moduleNameMapper": {
-    "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+    "@components/(.*)$": "<rootDir>/src/components/$1",
+    "@helpers/(.*)$": "<rootDir>/src/helpers/$1",
+    "@utils/(.*)$": "<rootDir>/src/utils/$1",
+    "@constants/(.*)$": "<rootDir>/src/constants/$1",
+    "@typings/(.*)$": "<rootDir>/src/typings/$1",
+    "@configs/(.*)$": "<rootDir>/src/configs/$1"
   }
 }

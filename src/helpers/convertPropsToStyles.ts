@@ -8,18 +8,16 @@ import isNullish from "@utils/isNullish";
 import __kebabCase from "lodash/kebabCase";
 import __capitalize from "lodash/capitalize";
 import type { CSSAttribute } from "goober";
-import type DivProps from "./props";
+import type DivProps from "@components/Div/props";
 
 export default function convertPropsToStyles(
   props: DivProps
 ): Partial<CSSAttribute> {
   const {
     width,
-    w,
     mw,
     Mw,
     height,
-    h,
     mh,
     Mh,
     curve,
@@ -31,7 +29,6 @@ export default function convertPropsToStyles(
     bg,
     bgImage,
     color,
-    hover,
     hoverBg,
     hoverColor,
     hoverShadow,
@@ -53,20 +50,17 @@ export default function convertPropsToStyles(
     dimensions,
     zIndex,
     order,
-    pointerEvents,
     rotate,
     css,
-    animation,
-    blurBg,
     matchParent,
     ...restProps
   } = props;
 
   return {
-    ...(width || w ? { width: width || w } : {}),
+    ...(width ? { width } : {}),
     ...(mw ? { minWidth: mw } : {}),
     ...(Mw ? { maxWidth: Mw } : {}),
-    ...(height || h ? { height: height || h } : {}),
+    ...(height ? { height } : {}),
     ...(mh ? { minHeight: mh } : {}),
     ...(Mh ? { maxHeight: Mh } : {}),
     ...(matchParent
@@ -107,7 +101,6 @@ export default function convertPropsToStyles(
     ...(overflowX ? { overflowX } : {}),
     ...(overflowY ? { overflowY } : {}),
     ...(order ? { order } : {}),
-    ...(pointerEvents ? { pointerEvents } : {}),
     ...(rotate
       ? {
           transform: `rotate(calc(${
@@ -123,7 +116,7 @@ export default function convertPropsToStyles(
     ...(!isNullish(m) ? { margin: prepareSpacing(m) } : {}),
     ...(!isNullish(p) ? { padding: prepareSpacing(p) } : {}),
     ...getOtherSpacings(restProps),
-    ...(hover || hoverBg || hoverColor || hoverShadow || zoomOnHover
+    ...(hoverBg || hoverColor || hoverShadow || zoomOnHover
       ? {
           ...(!pace ? { transition: `all var(--pace-fast)` } : {}),
           "&:hover": {
@@ -142,25 +135,6 @@ export default function convertPropsToStyles(
     ...(flexPortion ? { flex: flexPortion } : {}),
     ...(flex && flex.length ? flexer(...flex) : {}),
     ...(grid && grid.length ? grider(...grid) : {}),
-    ...(blurBg ? { backdropFilter: "blur(15px)" } : {}),
     ...(css || {}),
-    ...(animation
-      ? {
-          // animation: keyframes(animation.keyframes),
-          animationName: animation.name,
-          animationDuration: animation.duration ?? "var(--pace-x-slow)",
-          animationTimingFunction: animation.timingFunction ?? "linear",
-          animationIterationCount: animation.iterationCount ?? "infinite",
-          ...(animation.direction
-            ? { animationDirection: animation.direction }
-            : {}),
-          ...(animation.fillMode
-            ? { animationFillMode: animation.fillMode }
-            : {}),
-          ...(animation.playState
-            ? { animationPlayState: animation.playState }
-            : {}),
-        }
-      : {}),
   };
 }

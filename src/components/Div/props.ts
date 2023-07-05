@@ -16,9 +16,7 @@ type Dimensions = {
   insetInlineStart?: Spacings;
   insetInlineEnd?: Spacings;
 };
-// type ResponsiveProps = Partial<Record<MediaFeatures, DivProps>>;
-// type ResponsiveProps = { [key in MediaFeatures]?: DivProps };
-type ResponsiveProps = DynamicDictionary<MediaFeatures, DivProps>;
+// type ResponsiveProps = DynamicDictionary<MediaFeatures, DivProps>;
 
 // Flex/Grid
 type FlexAlignValues = "center" | "end" | "start";
@@ -37,26 +35,9 @@ type GridProps = [
   Nullishable<Spacings>?,
   Nullishable<Spacings>?,
   Nullishable<CSSAttribute["gridAutoFlow"]>?,
-  Nullishable<FlexAlignValues>?,
-  Nullishable<FlexJustifyValues>?
+  Nullishable<CSSAttribute["alignContent"]>?,
+  Nullishable<CSSAttribute["justifyItems"]>?
 ];
-
-// Animation
-type KeyframeValues = {
-  from: CSSAttribute;
-  to: CSSAttribute;
-  [key: string]: CSSAttribute;
-};
-type Animation = {
-  keyframes: KeyframeValues;
-  name: string;
-  duration: string;
-  iterationCount: CSSAttribute["animationIterationCount"];
-  direction: CSSAttribute["animationDirection"];
-  timingFunction: CSSAttribute["animationTimingFunction"];
-  fillMode: CSSAttribute["animationFillMode"];
-  playState: CSSAttribute["animationPlayState"];
-};
 
 export default interface DivProps extends HTMLAttributes<Element> {
   as?: unknown;
@@ -64,16 +45,12 @@ export default interface DivProps extends HTMLAttributes<Element> {
   dir?: "ltr" | "rtl" | "auto";
   /** represents css `width` property */
   width?: string;
-  /** shorthand for width prop */
-  w?: string;
   /** represents css `min-width` property */
   mw?: string;
   /** represents css `max-width` property */
   Mw?: string;
   /** represents css `height` property */
   height?: string;
-  /** shorthand for height prop */
-  h?: string;
   /** represents css `min-height` property */
   mh?: string;
   /** represents css `max-height` property */
@@ -191,8 +168,6 @@ export default interface DivProps extends HTMLAttributes<Element> {
   zIndex?: CSSAttribute["zIndex"];
   /** represents css `order` property */
   order?: CSSAttribute["order"];
-  /** represents css `pointer-events` property */
-  pointerEvents?: CSSAttribute["pointerEvents"];
   /**
    * Controls rotation of an element
    *
@@ -215,19 +190,11 @@ export default interface DivProps extends HTMLAttributes<Element> {
    *
    * 5: align-content
    *
-   * 6: justify-content
+   * 6: justify-items
    */
   grid?: GridProps;
   /** controls zooming the element when hovered */
   zoomOnHover?: boolean;
   /** represents html `style` prop, except it doesn't render props as inline styles */
   css?: CSSAttribute;
-  /**
-   * controls animation of an element
-   *
-   * @deprecated use `styled` method from `goober` instead
-   */
-  animation?: Animation;
-  /** controls adding a blur background to the element */
-  blurBg?: boolean;
 }
