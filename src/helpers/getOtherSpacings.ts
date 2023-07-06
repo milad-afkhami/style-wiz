@@ -1,5 +1,5 @@
 import __reduce from "lodash/reduce";
-import spacingVar from "@helpers/var/spacingVar";
+import CSSVariableHelper from "@helpers/cssVar";
 import type DivProps from "@components/Div/props";
 
 type SpacingProps = Array<{ key: SpacingKeys; properties: Array<string> }>;
@@ -38,7 +38,7 @@ export default function getOtherSpacings(
       properties.forEach((cssProperty) => {
         const spacingKey: Maybe<Spacings> = props[key];
         if (spacingKey) {
-          const cssValue = spacingVar(spacingKey);
+          const cssValue = CSSVariableHelper.spacing(spacingKey);
           // eslint-disable-next-line no-param-reassign
           css[cssProperty] = cssValue;
         }

@@ -1,5 +1,5 @@
 import __reduce from "lodash/reduce";
-import spacingVar from "./var/spacingVar";
+import CSSVariableHelper from "@helpers/cssVar";
 import type DivProps from "@components/Div/props";
 
 type Dimensions = NonNullable<DivProps["dimensions"]>;
@@ -23,7 +23,7 @@ export default function prepareDimensions(d: Dimensions) {
   return __reduce(
     d,
     (result, v, k) => {
-      const value = spacingVar(v);
+      const value = CSSVariableHelper.spacing(v);
       // eslint-disable-next-line no-param-reassign
       result[k as keyof Dimensions] = value;
       return result;

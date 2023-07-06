@@ -3,12 +3,12 @@ import prepareSpacing from "@helpers/prepareSpacing";
 import getOtherSpacings from "@helpers/getOtherSpacings";
 import flexer from "@helpers/flex";
 import grider from "@helpers/grid";
-import colorVar from "@helpers/var/color";
 import isNullish from "@utils/isNullish";
 import __kebabCase from "lodash/kebabCase";
 import __capitalize from "lodash/capitalize";
 import type { CSSAttribute } from "goober";
 import type DivProps from "@components/Div/props";
+import CSSVariableHelper from "./cssVar";
 
 export default function convertPropsToStyles(
   props: DivProps
@@ -40,7 +40,6 @@ export default function convertPropsToStyles(
     flexPortion,
     display,
     opacity,
-    // col,
     grid,
     overflow,
     overflowX,
@@ -90,12 +89,12 @@ export default function convertPropsToStyles(
       : {}),
     ...(border
       ? {
-          [`border${__capitalize(borderSide)}`]: `${borderW} solid ${colorVar(
-            border
-          )}`,
+          [`border${__capitalize(
+            borderSide
+          )}`]: `${borderW} solid ${CSSVariableHelper.color(border)}`,
         }
       : {}),
-    ...(bg ? { background: colorVar(bg) } : {}),
+    ...(bg ? { background: CSSVariableHelper.color(bg) } : {}),
     ...(bgImage ? { backgroundImage: bgImage } : {}),
     ...(overflow ? { overflow } : {}),
     ...(overflowX ? { overflowX } : {}),
@@ -112,7 +111,7 @@ export default function convertPropsToStyles(
       : {}),
     ...(cursor ? { cursor } : {}),
     ...(!isNullish(opacity) ? { opacity } : {}),
-    ...(color ? { color: colorVar(color) } : {}),
+    ...(color ? { color: CSSVariableHelper.color(color) } : {}),
     ...(!isNullish(m) ? { margin: prepareSpacing(m) } : {}),
     ...(!isNullish(p) ? { padding: prepareSpacing(p) } : {}),
     ...getOtherSpacings(restProps),
@@ -120,9 +119,11 @@ export default function convertPropsToStyles(
       ? {
           ...(!pace ? { transition: `all var(--pace-fast)` } : {}),
           "&:hover": {
-            ...(hoverBg ? { background: colorVar(hoverBg) } : {}),
+            ...(hoverBg
+              ? { background: CSSVariableHelper.color(hoverBg) }
+              : {}),
             ...(hoverColor
-              ? { "& ,& *": { color: colorVar(hoverColor) } }
+              ? { "& ,& *": { color: CSSVariableHelper.color(hoverColor) } }
               : {}),
             ...(hoverShadow
               ? { boxShadow: `var(--shadow-${hoverShadow}, ${hoverShadow})` }

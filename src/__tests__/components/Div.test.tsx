@@ -1,15 +1,15 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Div } from "./";
+import { Div } from "@components/Div";
 
-describe("Div Kit", () => {
-  it("renders text children without change", () => {
+describe("Div Kit works properly", () => {
+  it("renders string children intact", () => {
     const { getByText } = render(<Div>children</Div>);
 
     expect(getByText("children")).toBeInTheDocument();
   });
 
-  it("renders jsx children", () => {
+  it("renders jsx children intact", () => {
     const { getByText } = render(
       <Div>
         <div>children</div>
@@ -32,7 +32,7 @@ describe("Div Kit", () => {
     );
 
     expect(container.firstChild).toHaveAttribute("dir", "ltr");
-    expect(container.querySelector("#id")).toBeTruthy();
+    expect(container.firstChild).toHaveAttribute("id", "id");
     expect(container.firstChild).toHaveClass("className");
     expect(getByRole("role")).toBeInTheDocument();
     expect(getByTestId("test-id")).toBeInTheDocument();

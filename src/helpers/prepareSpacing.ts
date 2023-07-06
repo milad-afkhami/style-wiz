@@ -1,4 +1,4 @@
-import spacingVar from "./var/spacingVar";
+import CSSVariableHelper from "./cssVar";
 import type DivProps from "@components/Div/props";
 
 interface PrepareSpacing {
@@ -42,7 +42,7 @@ const prepareSpacing: PrepareSpacing = function (s) {
   } else {
     _s = s;
   }
-  return _s ? `${_s.map(spacingVar).join(" ")}` : undefined;
+  return _s ? `${_s.map(CSSVariableHelper.spacing).join(" ")}` : undefined;
 };
 
 export default prepareSpacing;

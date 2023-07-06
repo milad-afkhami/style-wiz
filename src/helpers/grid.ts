@@ -1,4 +1,4 @@
-import spacingVar from "@helpers/var/spacingVar";
+import CSSVariableHelper from "@helpers/cssVar";
 import type DivProps from "@components/Div/props";
 import type { CSSAttribute } from "goober";
 
@@ -29,8 +29,8 @@ const grid: Grid = function (
     display: "grid",
     ...(cols ? { gridTemplateColumns: cols } : {}),
     ...(rows ? { gridTemplateRows: rows } : {}),
-    ...(colGap ? { columnGap: spacingVar(colGap) } : {}),
-    ...(rowGap ? { rowGap: spacingVar(rowGap) } : {}),
+    ...(colGap ? { columnGap: CSSVariableHelper.spacing(colGap) } : {}),
+    ...(rowGap ? { rowGap: CSSVariableHelper.spacing(rowGap) } : {}),
     ...(autoFlow ? { gridAutoFlow: autoFlow } : {}),
     ...(align ? { alignContent: align } : {}),
     ...(justify ? { justifyItems: justify } : {}),

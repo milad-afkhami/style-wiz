@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "style-wiz",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "main": "./build/index.js",
   "module": "./build/index.cjs.js",
   "typings": "./build/src/index.d.ts",
@@ -16,9 +16,7 @@
   "bin": "src/bin/generate-stylesheets.mjs",
   "scripts": {
     "test": "jest",
-    "build:clean": "rm -rf build",
-    "build:rollup": "rollup -c",
-    "build": "yarn build:clean && yarn build:rollup",
+    "build": "rm -rf build && rollup -c",
     "lint": "eslint ./src --ext .ts,.tsx --config .eslintrc --fix",
     "format": "prettier --write .",
     "semantic-release": "semantic-release",
@@ -49,7 +47,6 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "15.1.0",
     "@rollup/plugin-typescript": "^11.1.2",
-    "@semantic-release/git": "^10.0.1",
     "@testing-library/dom": "^9.3.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "14.0.0",
@@ -94,8 +91,7 @@
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-conventional": "^17.6.6",
-    "chalk": "^5.3.0"
+    "@commitlint/config-conventional": "^17.6.6"
   },
   "sideEffects": false
 }

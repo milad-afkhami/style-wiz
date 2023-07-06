@@ -1,5 +1,4 @@
 import fs from "fs";
-import chalk from "chalk";
 
 // const nodeMajorVersion = process.version.slice(1, 3); if (nodeMajorVersion < 14) { throw new Error("`fs.rm` method requires node version 14.14.0 or higher."); }
 
@@ -182,9 +181,7 @@ async function generateThemes() {
 }
 
 function logSuccess(entity) {
-  console.log(
-    chalk.green("Generating", chalk.underline(entity), "stylesheets succeeded")
-  );
+  console.log("Generating", entity, "stylesheets succeeded");
 }
 
 fs.mkdirSync(`./${destinationDir}`, { recursive: true });

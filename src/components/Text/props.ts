@@ -10,7 +10,6 @@ export default interface TextProps extends HTMLAttributes<Element> {
   maxLines?: number;
   bold?: boolean;
   truncate?: boolean;
-  lineHeight?: CSSAttribute["lineHeight"];
   transform?: CSSAttribute["textTransform"];
   userSelect?: CSSAttribute["userSelect"];
   align?: CSSAttribute["textAlign"];
