@@ -3,12 +3,12 @@ import prepareSpacing from "@helpers/prepareSpacing";
 import getOtherSpacings from "@helpers/getOtherSpacings";
 import flexer from "@helpers/flex";
 import grider from "@helpers/grid";
+import CSSVariableHelper from "@helpers/cssVar";
 import isNullish from "@utils/isNullish";
 import __kebabCase from "lodash/kebabCase";
 import __capitalize from "lodash/capitalize";
 import type { CSSAttribute } from "goober";
 import type DivProps from "@components/Div/props";
-import CSSVariableHelper from "./cssVar";
 
 export default function convertPropsToStyles(
   props: DivProps
