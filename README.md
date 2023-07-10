@@ -204,6 +204,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
 ```
 
 - I emphasize that this way, you can have multiple themes and the name of these theme files will be in `constants/stylesheets/themes/NAME_OF_YOUR_THEME.json` format. The `NAME_OF_YOUR_THEME` placeholder doesn't have any specific preferences and is obviously the name of your theme, so you can fill it with any word you want, although I recommend `LIGHT`, `DARK`, and etc.
+- See the [colors document](./docs/colors.md) to understand the definition for each color variation.
 
 Doing that, StyleWiz will provide you a **minified** CSS file like below:
 
