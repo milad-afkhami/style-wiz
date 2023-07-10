@@ -32,7 +32,6 @@ export default function convertPropsToStyles(
     hoverBg,
     hoverColor,
     hoverShadow,
-    zoomOnHover,
     m,
     p,
     gap,
@@ -115,7 +114,7 @@ export default function convertPropsToStyles(
     ...(!isNullish(m) ? { margin: prepareSpacing(m) } : {}),
     ...(!isNullish(p) ? { padding: prepareSpacing(p) } : {}),
     ...getOtherSpacings(restProps),
-    ...(hoverBg || hoverColor || hoverShadow || zoomOnHover
+    ...(hoverBg || hoverColor || hoverShadow
       ? {
           ...(!pace ? { transition: `all var(--pace-fast)` } : {}),
           "&:hover": {
@@ -128,7 +127,6 @@ export default function convertPropsToStyles(
             ...(hoverShadow
               ? { boxShadow: `var(--shadow-${hoverShadow}, ${hoverShadow})` }
               : {}),
-            ...(zoomOnHover ? { transform: "scale(1.01)" } : {}),
           },
         }
       : {}),

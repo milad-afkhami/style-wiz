@@ -189,8 +189,6 @@ export default interface DivProps extends HTMLAttributes<Element> {
    * 6: justify-items
    */
   grid?: GridProps;
-  /** controls zooming the element when hovered */
-  zoomOnHover?: boolean;
   /** represents html `style` prop, except it doesn't render props as inline styles */
   css?: CSSAttribute;
 }
