@@ -12,7 +12,7 @@ function getFlagValue(flagKey) {
 const destinationDir =
   getFlagValue("destinationDir") || "public/stylesheets/style-wiz";
 /** The path to the directory that contains the json config files */
-const constantsDir = getFlagValue("constantsDir") || "stylesheets/constants";
+const constantsDir = getFlagValue("constantsDir") || "constants/stylesheets";
 
 async function generateBreakpoints() {
   // getting breakpoints
@@ -193,6 +193,17 @@ const isStyleWizAlreadyIgnoredForGit = fs
 if (!isStyleWizAlreadyIgnoredForGit) {
   fs.appendFileSync("./.gitignore", `\n${destinationDir}/*.min.css`);
 }
+
+const barrelFileContent = `@import url(./colors.min.css);
+@import url(./paces.min.css);
+@import url(./curves.min.css);
+@import url(./shadows.min.css);
+@import url(./spacings.min.css);
+@import url(./typographies.min.css);
+@import url(./breakpoints.min.css);
+`;
+
+fs.writeFileSync(`./${destinationDir}/index.css`, barrelFileContent);
 
 generateBreakpoints();
 logSuccess("breakpoints");
