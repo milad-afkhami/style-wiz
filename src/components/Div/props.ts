@@ -19,15 +19,11 @@ type Dimensions = {
 // type ResponsiveProps = DynamicDictionary<MediaFeatures, DivProps>;
 
 // Flex/Grid
-type FlexAlignValues = "center" | "end" | "start";
-type FlexJustifyValues = "center" | "end" | "start" | "around" | "between";
-type FlexDirValues = CSSAttribute["flexDirection"];
-type FlexWrapValues = CSSAttribute["flexWrap"];
 type FlexProps = [
-  Nullishable<FlexAlignValues>,
-  Nullishable<FlexJustifyValues>?,
-  Nullishable<FlexDirValues>?,
-  Nullishable<FlexWrapValues>?
+  Nullishable<CSSAttribute["alignItems"]>,
+  Nullishable<CSSAttribute["justifyContent"]>?,
+  Nullishable<CSSAttribute["flexDirection"]>?,
+  Nullishable<CSSAttribute["flexWrap"]>?
 ];
 type GridProps = [
   Nullishable<CSSAttribute["gridTemplateColumns"]>,
