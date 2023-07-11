@@ -536,6 +536,43 @@ StyleWiz places minified generated files in `public/stylesheets/style-wiz` by de
 style-wiz generate-stylesheets destinationDir=ANOTHER/PATH/style-wiz
 ```
 
+#### Using minified stylesheets
+
+Once you run the above commands with preferred arguments, StyleWiz will generate som minified stylesheets in the `destinationDir` like below:
+
+- public
+  - stylesheets
+    - style-wiz
+      - breakpoints.min.css
+      - colors.min.css
+      - curves.min.css
+      - paces.min.css
+      - shadows.min.css
+      - spacings.min.css
+      - typographies.min.css
+      - index.css
+
+all the files with `public/stylesheets/style-wiz/*.min.css` format was automatically added to `.gitignore` by StyleWiz. There is also a barrel file(index.css) which contains the below content:
+
+```css
+@import url(./colors.min.css);
+@import url(./paces.min.css);
+@import url(./curves.min.css);
+@import url(./shadows.min.css);
+@import url(./spacings.min.css);
+@import url(./typographies.min.css);
+@import url(./breakpoints.min.css);
+```
+
+This file is responsible for gathering all of the minified stylesheets together so you only have one file to import to your stylesheets. It's your decision to make where you want to import this file but all of the projects no matter which architecture they use probably have an `index.css` file, so it's probably a good place for the barrel file to be imported to.
+
+```css
+/* index.css or src/index.css or ... */
+@import url("public/stylesheets/style-wiz/index.css");
+```
+
+The above path will change if you [customize the destination directory](#destination-directory).
+
 ### Components
 
 Powered by [Goober](https://goober.rocks)(an alternative to Styled Components), StyleWiz offers a collection of styled React components inspired by Material UI's popular `Box` and `Typography` components, enhancing your development experience.
