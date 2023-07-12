@@ -49,7 +49,7 @@ export default function convertPropsToStyles(
     zIndex,
     order,
     rotate,
-    css,
+    styles,
     matchParent,
     ...restProps
   } = props;
@@ -134,6 +134,6 @@ export default function convertPropsToStyles(
     ...(flexPortion ? { flex: flexPortion } : {}),
     ...(flex && flex.length ? flexer(...flex) : {}),
     ...(grid && grid.length ? grider(...grid) : {}),
-    ...(css || {}),
+    ...(styles || {}),
   };
 }

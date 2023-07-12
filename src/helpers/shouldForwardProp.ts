@@ -50,7 +50,7 @@ const domProhibitedProps = [
   "zIndex",
   "order",
   "grid",
-  "css",
+  "styles",
   "rotate",
   // Text
   "lineHeight",

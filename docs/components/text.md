@@ -40,5 +40,5 @@ Here is a full list of available props in order to get the most out of this comp
 |       transform       |  controls transformation of the text inside element   |           [MDN/text-transform]           |    undefined     |                                          |
 |      userSelect       |         represents css `user-select` property         |            [MDN/user-select]             |    undefined     |                                          |
 |         align         |         represents css `text-align` property          |             [MDN/text-align]             |    undefined     |                                          |
-|          css          |           represents html `style` attribute           |              CSSProperties               |    undefined     | it doesn't render props as inline styles |
+|        styles         |           represents html `style` attribute           |              CSSProperties               |    undefined     | it doesn't render props as inline styles |
 | other HTML attributes | All of the available Attributes for HTML span element |        HTMLAttributes\<Element\>         |        -         |                                          |

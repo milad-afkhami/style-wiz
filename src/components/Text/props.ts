@@ -13,5 +13,5 @@ export default interface TextProps extends HTMLAttributes<Element> {
   transform?: CSSAttribute["textTransform"];
   userSelect?: CSSAttribute["userSelect"];
   align?: CSSAttribute["textAlign"];
-  css?: CSSAttribute;
+  styles?: CSSAttribute;
 }

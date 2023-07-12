@@ -45,8 +45,8 @@ describe("Div Kit works properly", () => {
     expect(getByText("children", { selector: "section" })).toBeInTheDocument();
   });
 
-  it("renders the `css` prop correctly and not as inline style", () => {
-    const { container } = render(<Div css={{ width: "100px" }} />);
+  it("renders the `styles` prop correctly and not as inline style", () => {
+    const { container } = render(<Div styles={{ width: "100px" }} />);
 
     expect(container.firstChild).toHaveStyle({ width: "100px" });
     expect(container.firstChild).not.toHaveAttribute("style");

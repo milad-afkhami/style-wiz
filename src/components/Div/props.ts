@@ -190,5 +190,5 @@ export default interface DivProps extends HTMLAttributes<Element> {
    */
   grid?: GridProps;
   /** represents html `style` prop, except it doesn't render props as inline styles */
-  css?: CSSAttribute;
+  styles?: CSSAttribute;
 }

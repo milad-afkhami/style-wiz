@@ -45,8 +45,8 @@ describe("Text Kit works properly", () => {
     expect(getByText("children", { selector: "p" })).toBeInTheDocument();
   });
 
-  it("renders the `css` prop correctly and not as inline style", () => {
-    const { container } = render(<Text css={{ lineHeight: "normal" }} />);
+  it("renders the `styles` prop correctly and not as inline style", () => {
+    const { container } = render(<Text styles={{ lineHeight: "normal" }} />);
 
     expect(container.firstChild).toHaveStyle({ lineHeight: "normal" });
     expect(container.firstChild).not.toHaveAttribute("style");
