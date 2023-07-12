@@ -1,7 +1,6 @@
-import { setup } from "goober";
-import { createElement } from "react";
+import GooberHelper from "@helpers/goober";
 
-setup(createElement);
+GooberHelper.setup();
 
 export * from "@components/Div";
 export * from "@components/Text";
