@@ -1,6 +1,8 @@
-import __reduce from "lodash/reduce";
 import CSSVariableHelper from "@helpers/cssVar";
 import type DivProps from "@components/Div/props";
+
+// prettier-ignore
+type SpacingKeys = "mr" | "ml" | "mEnd" | "mStart" | "mt" | "mb" | "mx" | "my" | "pr" | "pl" | "pEnd" | "pStart" | "pt" | "pb" | "px" | "py";
 
 type SpacingProps = Array<{ key: SpacingKeys; properties: Array<string> }>;
 
@@ -24,27 +26,24 @@ const spacingPropsMap: SpacingProps = [
   { key: "py", properties: ["padding-top", "padding-bottom"] },
 ];
 
-// type SpacingKeys = Exclude<ValueOf<typeof spacingProps>, Function | number | undefined>; type Spacings = Pick<DivProps, SpacingKeys>;
-// prettier-ignore
-type SpacingKeys = "mr" | "ml" | "mEnd" | "mStart" | "mt" | "mb" | "mx" | "my" | "pr" | "pl" | "pEnd" | "pStart" | "pt" | "pb" | "px" | "py";
-
 /** this method will check the object passed to it and if there was any of the spacingProps object keys in it, it will translate that to correct style property. */
 export default function getOtherSpacings(
   props: Pick<DivProps, SpacingKeys> = {}
 ) {
-  return __reduce(
-    spacingPropsMap.filter(({ key }) => props[key] !== undefined),
-    (css, { key, properties }) => {
-      properties.forEach((cssProperty) => {
-        const spacingKey: Maybe<Spacings> = props[key];
-        if (spacingKey) {
-          const cssValue = CSSVariableHelper.spacing(spacingKey);
-          // eslint-disable-next-line no-param-reassign
-          css[cssProperty] = cssValue;
-        }
-      });
-      return css;
-    },
-    {} as Dictionary<string>
+  // filter passed props that are from spacingProps keys
+  const passedSpacingProps = spacingPropsMap.filter(
+    ({ key }) => props[key] !== undefined
   );
+
+  return passedSpacingProps.reduce((css, { key, properties }) => {
+    properties.forEach((cssProperty) => {
+      const spacingKey: Maybe<Spacings> = props[key];
+      if (spacingKey) {
+        const cssValue = CSSVariableHelper.spacing(spacingKey);
+        // eslint-disable-next-line no-param-reassign
+        css[cssProperty] = cssValue;
+      }
+    });
+    return css;
+  }, {} as Dictionary<string>);
 }

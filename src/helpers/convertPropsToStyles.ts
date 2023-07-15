@@ -5,7 +5,6 @@ import flexer from "@helpers/flex";
 import grider from "@helpers/grid";
 import CSSVariableHelper from "@helpers/cssVar";
 import isNullish from "@utils/isNullish";
-import __kebabCase from "lodash/kebabCase";
 import capitalize from "@utils/capitalize";
 import type { CSSAttribute } from "goober";
 import type DivProps from "@components/Div/props";
@@ -83,9 +82,7 @@ export default function convertPropsToStyles(
       : {}),
     ...(shadow ? { boxShadow: `var(--shadow-${shadow}, ${shadow})` } : {}),
     ...(gap ? { gap: `var(--spacing-${gap}, ${gap})` } : {}),
-    ...(pace
-      ? { transition: `all var(--pace-${__kebabCase(pace)}, ${pace})` }
-      : {}),
+    ...(pace ? { transition: `all var(--pace-${pace}, ${pace})` } : {}),
     ...(border
       ? {
           [`border${capitalize(
