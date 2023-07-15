@@ -6,7 +6,7 @@ import grider from "@helpers/grid";
 import CSSVariableHelper from "@helpers/cssVar";
 import isNullish from "@utils/isNullish";
 import __kebabCase from "lodash/kebabCase";
-import __capitalize from "lodash/capitalize";
+import capitalize from "@utils/capitalize";
 import type { CSSAttribute } from "goober";
 import type DivProps from "@components/Div/props";
 
@@ -88,7 +88,7 @@ export default function convertPropsToStyles(
       : {}),
     ...(border
       ? {
-          [`border${__capitalize(
+          [`border${capitalize(
             borderSide
           )}`]: `${borderW} solid ${CSSVariableHelper.color(border)}`,
         }
