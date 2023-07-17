@@ -14,7 +14,7 @@
     "dist/**/*"
   ],
   "types": "dist/index.d.ts",
-  "bin": "src/bin/generate-stylesheets.mjs",
+  "bin": "src/bin/style-wiz.mjs",
   "scripts": {
     "test": "jest",
     "build": "rm -rf dist && rollup -c",
