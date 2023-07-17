@@ -517,7 +517,35 @@ And you can use these variables like: `var(--shadow-sm)`. But using CSS variable
 As I mentioned, StyleWiz generates minified global stylesheets based on the configuration files you provided. For that you need to run this CLI command in order to generate minified CSS files.
 
 ```sh
-style-wiz generate-stylesheets
+style-wiz
+```
+
+In case you got the `style-wiz: command not found` error, you can replace `style-wiz` with one of the following options:
+
+1. Add a new script in `package.json` like this:
+
+```json
+{
+  "scripts": {
+    "stylesheets": "style-wiz"
+  }
+}
+```
+
+And run it like this:
+
+```sh
+yarn stylesheets
+```
+
+This is what you do in most of the npm packages.
+
+2. Point to the exact path of the generated binary:
+
+Ignore this option if the first one works for you.
+
+```sh
+node_modules/.bin/style-wiz
 ```
 
 #### Constants Directory
