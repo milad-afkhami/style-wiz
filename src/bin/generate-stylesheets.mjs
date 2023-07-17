@@ -1,6 +1,6 @@
-import fs from "fs";
+#!/usr/bin/env node
 
-// const nodeMajorVersion = process.version.slice(1, 3); if (nodeMajorVersion < 14) { throw new Error("`fs.rm` method requires node version 14.14.0 or higher."); }
+import fs from "fs";
 
 function getFlagValue(flagKey) {
   const flags = process.argv?.slice(2).map((flag) => flag.split("="));
