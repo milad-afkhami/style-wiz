@@ -630,3 +630,27 @@ StyleWiz focuses on CSS minification, prioritizing file size optimization withou
 To ensure the reliability and quality of the StyleWiz package, comprehensive unit tests have been implemented using Jest. The styled React components are thoroughly tested using React Testing Library, guaranteeing robustness and compatibility with your projects.
 
 Get started with StyleWiz today and unlock the potential of effortless CSS generation with JSON-powered workflows. Let StyleWiz handle the heavy lifting while you focus on creating beautiful and performant web applications.
+
+### Usage With Next.js
+
+Like goober and other stylesheet related libraries, you need to do some extra stuff in order to make StyleWiz work with [next.js](https://nextjs.org). For that open the \_document.jsx file and add below code to it:
+
+```ts
+import { extractCss } from "goober";
+import { extractCss as styleWizExtractCss } from "style-wiz";
+
+export default class Document extends NextDocument<Props> {
+  static async getInitialProps({
+    renderPage,
+  }: DocumentContext): Promise<DocumentInitialProps> {
+    const page = await renderPage();
+    const css = `${extractCss()} ${styleWizExtractCss()}`;
+
+    return { ...page, css };
+  }
+
+  render() {}
+}
+```
+
+Since this library relies on goober, the approach you need to take is pretty much the same as [Goober's approach](https://github.com/vercel/next.js/tree/canary/examples/with-goober).
