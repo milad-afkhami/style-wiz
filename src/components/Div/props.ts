@@ -37,8 +37,6 @@ type GridProps = [
 
 export default interface DivProps extends HTMLAttributes<Element> {
   as?: unknown;
-  /** represents css `dir` property */
-  dir?: "ltr" | "rtl" | "auto";
   /** represents css `width` property */
   width?: string;
   /** represents css `min-width` property */
