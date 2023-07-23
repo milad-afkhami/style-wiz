@@ -53,7 +53,7 @@ async function generatePaces() {
   );
 
   const variables = Object.entries(paces).reduce((acc, [key, value]) => {
-    acc += `--pace-${key}:${value};`;
+    acc += `--pace-${key}:${value}s;`;
     return acc;
   }, "");
 
