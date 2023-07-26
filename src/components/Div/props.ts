@@ -1,5 +1,13 @@
 import type { HTMLAttributes } from "react";
 import type { CSSAttribute } from "goober";
+import type {
+  Spacings,
+  Colors,
+  Curves,
+  Shadows,
+  Paces,
+} from "@typings/stylesheets";
+import type { Nullishable } from "@typings/utilities";
 
 type BorderSide =
   | "left"
