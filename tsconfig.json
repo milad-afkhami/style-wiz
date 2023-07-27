@@ -23,5 +23,5 @@
       "@configs/*": ["./src/configs/*"]
     }
   },
-  "include": ["./src"]
+  "include": ["./src", "./tests"]
 }
