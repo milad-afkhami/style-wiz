@@ -63,4 +63,4 @@ const Text = styled(
   })
 );
 
-export { Text, TextProps };
+export { Text, type TextProps };
