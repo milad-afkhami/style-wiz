@@ -1,4 +1,4 @@
-import prepareDimensions from "@helpers/prepareDimensions";
+import prepareDimensions from "../../src/helpers/prepareDimensions";
 
 const givenParam = {
   top: "var(--css-variable)",

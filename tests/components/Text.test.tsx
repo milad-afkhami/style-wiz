@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Text } from "@components/Text";
+import { Text } from "../../src/components/Text";
 
 describe("Text Kit works properly", () => {
   it("renders string children intact", () => {

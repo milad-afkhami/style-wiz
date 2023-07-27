@@ -1,4 +1,4 @@
-import CSSVariableHelper from "@helpers/cssVar";
+import CSSVariableHelper from "../../src/helpers/cssVar";
 
 describe("`CSSVariableHelper` works properly", () => {
   afterEach(() => {

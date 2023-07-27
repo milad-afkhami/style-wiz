@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Div } from "@components/Div";
+import { Div } from "../../src/components/Div";
 
 describe("Div Kit works properly", () => {
   it("renders string children intact", () => {

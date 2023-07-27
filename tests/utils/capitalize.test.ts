@@ -1,4 +1,4 @@
-import capitalize from "@utils/capitalize";
+import capitalize from "../../src/utils/capitalize";
 
 it.each`
   param        | expected
