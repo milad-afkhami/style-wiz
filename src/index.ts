@@ -1,4 +1,4 @@
-import GooberHelper from "@helpers/goober";
+import GooberHelper from "./helpers/goober";
 
 GooberHelper.setup();
 

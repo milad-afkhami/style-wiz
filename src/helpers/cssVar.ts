@@ -1,5 +1,5 @@
-import type TextProps from "@components/Text/props";
-import type { Spacings, Colors } from "@typings/stylesheets";
+import type TextProps from "../components/Text/props";
+import type { Spacings, Colors } from "../typings/stylesheets";
 
 export default class CSSVariableHelper {
   /** helps to prepare a css color variable */

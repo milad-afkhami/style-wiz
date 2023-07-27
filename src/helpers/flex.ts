@@ -1,5 +1,5 @@
 import type { CSSAttribute } from "goober";
-import type DivProps from "@components/Div/props";
+import type DivProps from "../components/Div/props";
 
 interface Flex {
   (...props: NonNullable<DivProps["flex"]>): CSSAttribute;

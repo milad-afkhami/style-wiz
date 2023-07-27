@@ -6,8 +6,8 @@ import type {
   Curves,
   Shadows,
   Paces,
-} from "@typings/stylesheets";
-import type { Nullishable } from "@typings/utilities";
+} from "../../typings/stylesheets";
+import type { Nullishable } from "../../typings/utilities";
 
 type BorderSide =
   | "left"

@@ -1,5 +1,5 @@
-import CSSVariableHelper from "@helpers/cssVar";
-import type DivProps from "@components/Div/props";
+import CSSVariableHelper from "../helpers/cssVar";
+import type DivProps from "../components/Div/props";
 
 type Dimensions = NonNullable<DivProps["dimensions"]>;
 

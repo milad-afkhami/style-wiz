@@ -1,7 +1,7 @@
-import CSSVariableHelper from "@helpers/cssVar";
-import type DivProps from "@components/Div/props";
-import type { Spacings } from "@typings/stylesheets";
-import type { Maybe, Dictionary } from "@typings/utilities";
+import CSSVariableHelper from "../helpers/cssVar";
+import type DivProps from "../components/Div/props";
+import type { Spacings } from "../typings/stylesheets";
+import type { Maybe, Dictionary } from "../typings/utilities";
 
 // prettier-ignore
 type SpacingKeys = "mr" | "ml" | "mEnd" | "mStart" | "mt" | "mb" | "mx" | "my" | "pr" | "pl" | "pEnd" | "pStart" | "pt" | "pb" | "px" | "py";

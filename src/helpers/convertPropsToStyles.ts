@@ -1,13 +1,13 @@
-import prepareDimensions from "@helpers/prepareDimensions";
-import prepareSpacing from "@helpers/prepareSpacing";
-import getOtherSpacings from "@helpers/getOtherSpacings";
-import flexer from "@helpers/flex";
-import grider from "@helpers/grid";
-import CSSVariableHelper from "@helpers/cssVar";
-import isNullish from "@utils/isNullish";
-import capitalize from "@utils/capitalize";
+import prepareDimensions from "../helpers/prepareDimensions";
+import prepareSpacing from "../helpers/prepareSpacing";
+import getOtherSpacings from "../helpers/getOtherSpacings";
+import flexer from "../helpers/flex";
+import grider from "../helpers/grid";
+import CSSVariableHelper from "../helpers/cssVar";
+import isNullish from "../utils/isNullish";
+import capitalize from "../utils/capitalize";
 import type { CSSAttribute } from "goober";
-import type DivProps from "@components/Div/props";
+import type DivProps from "../components/Div/props";
 
 export default function convertPropsToStyles(
   props: DivProps
