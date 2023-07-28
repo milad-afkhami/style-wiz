@@ -4,7 +4,7 @@ Powerful CSS-in-JS and build-time stylesheets tool designed to simplify CSS-in-J
 
 With the primary command "generate-stylesheets," StyleWiz executes a series of scripts using the robust "child_process" library. These scripts utilize the provided JSON config files as input and generate custom stylesheets that align perfectly with your design requirements.
 
-StyleWiz automates the generation of minified CSS files for multi theme color palettes, Typographies, Spacings, Breakpoints, and ..., ensuring optimal performance and reducing development time.
+StyleWiz automates the generation of minified CSS files for multi theme color palettes, Typographies, Spacings, and ..., ensuring optimal performance and reducing development time.
 It does that by running a cli command that generates minified stylesheets from config files.
 
 ## Usage
@@ -247,6 +247,8 @@ With StyleWiz you can add your desired breakpoints so that StyleWiz can use it t
 ```
 
 </details>
+
+These breakpoints will play a crucial role in creating both [responsive typographies](#3-typographies) and [responsive stylesheets](#responsive-stylesheets), which will be explained in more detail shortly.
 
 <br />
 
@@ -571,7 +573,6 @@ Once you run the above commands with preferred arguments, StyleWiz will generate
 - public
   - stylesheets
     - style-wiz
-      - breakpoints.min.css
       - colors.min.css
       - curves.min.css
       - paces.min.css
@@ -654,3 +655,94 @@ export default class Document extends NextDocument<Props> {
 ```
 
 Since this library relies on goober, the approach you need to take is pretty much the same as [Goober's approach](https://github.com/vercel/next.js/tree/canary/examples/with-goober).
+
+### Responsive Stylesheets
+
+StyleWiz lacks access to stylesheets constants at runtime, preventing it from generating responsive stylesheets with media queries using responsive breakpoints. Accessing stylesheets constants at runtime requires a provider(which StyleWiz does't have) or `fs` module which interferes with client-side rendering and edge runtime.
+
+However, although StyleWiz does not directly support responsive stylesheets, there is a workaround to achieve responsive styling. You previously defined a breakpoints config in the [breakpoints section](#2-breakpoints), which was used for creating responsive typographies, you can also utilize it to create responsive stylesheets. Follow this workaround:
+
+Create a helper function named `responsiveStyles`. You can place it wherever it fits best in your project architecture; for instance, in `helpers/responsiveStyles.ts`:
+
+````ts
+import breakpoints from "@constants/stylesheets/breakpoints.json";
+import type { CSSAttribute } from "goober";
+
+/**
+ * This method helps us in generating responsive stylesheet objects
+ * @param breakpoint the lower bound breakpoint,
+ * the stylesheets will apply to layouts with a width bigger than this breakpoint value(mobile first)
+ * @param styles css stylesheets object
+ * @example
+ * ```tsx
+ * <Div styles={responsiveStyles("md", { display: "flex" })} />
+ * ```
+ */
+const responsiveStyles = (breakpoint: Breakpoints, styles: CSSAttribute) => {
+  if (styles) {
+    return { [`@media (min-width: ${breakpoints[breakpoint]}px)`]: styles };
+  }
+  return {};
+};
+
+export default responsiveStyles;
+````
+
+As its jsDoc clearly explains, the `responsiveStyles` helper is designed to generate responsive stylesheet objects. It takes two parameters: first one is the identifier for the lower bound breakpoint, the second one is just an ordinary css object(it will have complete intellisense).
+
+The implementation illustrates that `responsiveStyles` takes the breakpoint key (e.g., "sm") and generates stylesheets that apply to layouts with a width larger than the breakpoint's value (e.g., "576px"). By default, it follows a mobile-first approach, but you can customize this behavior if needed. For usage, refer to the provided jsDoc or follow this example:
+
+```tsx
+import { Div } from "style-wiz";
+
+const FancyComponent = (props) => {
+  return (
+    <>
+      <Div styles={responsiveStyles("sm", { display: "none" })}>...</Div>
+      {/* You can even mix them up: */}
+      <Div
+        // "100px" for screens with a width smaller than the `sm` breakpoint
+        height="100px"
+        styles={{
+          // "200px" for screens with a width bigger than the `sm` breakpoint(and smaller than the `md` breakpoint)
+          ...responsiveStyles("sm", { height: "200px" }),
+          // "200px" for screens with a width bigger than the `md` breakpoint(and smaller than the `lg` breakpoint)
+          ...responsiveStyles("md", { height: "300px" }),
+          // "200px" for screens with a width bigger than the `lg` breakpoint
+          ...responsiveStyles("lg", { height: "400px" }),
+        }}
+      >
+        ...
+      </Div>
+    </>
+  );
+};
+```
+
+### Pseudo Classes And Pseudo Elements
+
+Although I personally prefer creating separate styled components to contain complex stylesheets, including pseudo classes and pseudo elements, it is still possible to style them using StyleWiz. Here's how you can achieve it:
+
+```tsx
+import { Div } from "style-wiz";
+
+const FancyComponent = (props) => {
+  return (
+    <Div
+      styles={{
+        "&:hover": {
+          // hover pseudo class stylesheets
+        },
+        "&:before": {
+          // before pseudo element stylesheets
+        },
+        "&:after": {
+          // after pseudo element stylesheets
+        },
+      }}
+    >
+      ...
+    </Div>
+  );
+};
+```
