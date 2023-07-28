@@ -14,22 +14,6 @@ const destinationDir =
 /** The path to the directory that contains the json config files */
 const constantsDir = getFlagValue("constantsDir") || "constants/stylesheets";
 
-async function generateBreakpoints() {
-  // getting breakpoints
-  const breakpoints = JSON.parse(
-    fs.readFileSync(`./${constantsDir}/breakpoints.json`, "utf-8")
-  );
-
-  const variables = Object.entries(breakpoints).reduce((acc, [key, value]) => {
-    acc += `--breakpoint-${key}:${value}px;`;
-    return acc;
-  }, "");
-
-  const styles = `:root{${variables}}`;
-
-  fs.writeFileSync(`./${destinationDir}/breakpoints.min.css`, styles);
-}
-
 async function generateCurves() {
   // getting curves
   const curves = JSON.parse(
@@ -200,13 +184,10 @@ const barrelFileContent = `@import url(./colors.min.css);
 @import url(./shadows.min.css);
 @import url(./spacings.min.css);
 @import url(./typographies.min.css);
-@import url(./breakpoints.min.css);
 `;
 
 fs.writeFileSync(`./${destinationDir}/index.css`, barrelFileContent);
 
-generateBreakpoints();
-logSuccess("breakpoints");
 generateCurves();
 logSuccess("curves");
 generatePaces();
