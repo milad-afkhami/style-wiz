@@ -161,7 +161,7 @@ async function generateThemes() {
     styles += `:root[data-theme='${name}']{${variables}}`;
   });
 
-  fs.writeFileSync(`./${destinationDir}/colors.min.css`, styles);
+  fs.writeFileSync(`./${destinationDir}/themes.min.css`, styles);
 }
 
 function logSuccess(entity) {
@@ -178,7 +178,7 @@ if (!isStyleWizAlreadyIgnoredForGit) {
   fs.appendFileSync("./.gitignore", `\n${destinationDir}/*.min.css`);
 }
 
-const barrelFileContent = `@import url(./colors.min.css);
+const barrelFileContent = `@import url(./themes.min.css);
 @import url(./paces.min.css);
 @import url(./curves.min.css);
 @import url(./shadows.min.css);
