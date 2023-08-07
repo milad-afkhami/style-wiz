@@ -637,7 +637,9 @@ import { Text } from "style-wiz";
 
 This way you don't need to prefix CSS variables and they are available in a more compelling manner.
 
-See a list of available props for [Div](./docs/components/div.md) and [Text](./docs/components/text.md) and the definition of them here.
+Explore a list of accessible properties for the `Div` component available [here](./docs/components/div.md),
+and access a list of available attributes for the `Text` component [here](./docs/components/text.md),
+accompanied by their respective definitions.
 
 StyleWiz focuses on CSS minification, prioritizing file size optimization without compromising performance.
 
