@@ -28,15 +28,28 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
 ```json
 {
   "brand": {
-    "main": "A valid css color, for example #333",
-    "hover": "A valid css color, for example #333",
-    "light": "A valid css color, for example #333",
-    "lighter": "A valid css color, for example #333",
-    "dark": "A valid css color, for example #333",
-    "darker": "A valid css color, for example #333",
-    "pale": "A valid css color, for example #333",
-    "paler": "A valid css color, for example #333",
-    "variant": "A valid css color, for example #333"
+    "primary": {
+      "main": "A valid css color, for example #333",
+      "hover": "A valid css color, for example #333",
+      "light": "A valid css color, for example #333",
+      "lighter": "A valid css color, for example #333",
+      "dark": "A valid css color, for example #333",
+      "darker": "A valid css color, for example #333",
+      "pale": "A valid css color, for example #333",
+      "paler": "A valid css color, for example #333",
+      "contrast": "A valid css color, for example #333"
+    },
+    "secondary": {
+      "main": "A valid css color, for example #333",
+      "hover": "A valid css color, for example #333",
+      "light": "A valid css color, for example #333",
+      "lighter": "A valid css color, for example #333",
+      "dark": "A valid css color, for example #333",
+      "darker": "A valid css color, for example #333",
+      "pale": "A valid css color, for example #333",
+      "paler": "A valid css color, for example #333",
+      "contrast": "A valid css color, for example #333"
+    }
   },
   "bg": {
     "primary": {
@@ -48,7 +61,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "secondary": {
       "main": "A valid css color, for example #333",
@@ -59,7 +72,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "tertiary": {
       "main": "A valid css color, for example #333",
@@ -70,7 +83,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "disabled": {
       "main": "A valid css color, for example #333",
@@ -81,7 +94,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     }
   },
   "text": {
@@ -94,7 +107,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "secondary": {
       "main": "A valid css color, for example #333",
@@ -105,7 +118,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "tertiary": {
       "main": "A valid css color, for example #333",
@@ -116,7 +129,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "disabled": {
       "main": "A valid css color, for example #333",
@@ -127,7 +140,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     }
   },
   "assistive": {
@@ -140,7 +153,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "error": {
       "main": "A valid css color, for example #333",
@@ -151,7 +164,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "info": {
       "main": "A valid css color, for example #333",
@@ -162,7 +175,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "warning": {
       "main": "A valid css color, for example #333",
@@ -173,7 +186,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     }
   },
   "border": {
@@ -186,7 +199,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     },
     "light": {
       "main": "A valid css color, for example #333",
@@ -197,7 +210,7 @@ For that, create another directory in `constantsDir` and call it `themes`. in th
       "darker": "A valid css color, for example #333",
       "pale": "A valid css color, for example #333",
       "paler": "A valid css color, for example #333",
-      "variant": "A valid css color, for example #333"
+      "contrast": "A valid css color, for example #333"
     }
   }
 }
