@@ -2,7 +2,7 @@
 
 Powerful CSS-in-JS and build-time stylesheets tool designed to simplify CSS-in-JS Developer experience and streamline the process of generating minified CSS files at build-time tailored for your needs.
 
-With the primary command "generate-stylesheets," StyleWiz executes a series of scripts using the robust "child_process" library. These scripts utilize the provided JSON config files as input and generate custom stylesheets that align perfectly with your design requirements.
+With the primary command "style-wiz", StyleWiz executes a series of scripts using the robust "child_process" library. These scripts utilize the provided JSON config files as input and generate custom stylesheets that align perfectly with your design requirements.
 
 StyleWiz automates the generation of minified CSS files for multi theme color palettes, Typographies, Spacings, and ..., ensuring optimal performance and reducing development time.
 It does that by running a cli command that generates minified stylesheets from config files.
@@ -568,7 +568,7 @@ node_modules/.bin/style-wiz
 StyleWiz looks for `constantsDir` placed in `constants/stylesheets` by default. If you desire to override this default behavior, you can do so like this:
 
 ```sh
-style-wiz generate-stylesheets constantsDir=stylesheets/constants
+style-wiz constantsDir=stylesheets/constants
 ```
 
 #### Destination Directory
@@ -576,7 +576,7 @@ style-wiz generate-stylesheets constantsDir=stylesheets/constants
 StyleWiz places minified generated files in `public/stylesheets/style-wiz` by default. If you desire to override this default behavior, you can do so like this:
 
 ```sh
-style-wiz generate-stylesheets destinationDir=ANOTHER/PATH/style-wiz
+style-wiz destinationDir=ANOTHER/PATH/style-wiz
 ```
 
 #### Using minified stylesheets
