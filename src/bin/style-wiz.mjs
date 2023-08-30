@@ -170,13 +170,7 @@ function logSuccess(entity) {
 
 fs.mkdirSync(`./${destinationDir}`, { recursive: true });
 
-const isStyleWizAlreadyIgnoredForGit = fs
-  .readFileSync("./.gitignore")
-  .includes(destinationDir);
-
-if (!isStyleWizAlreadyIgnoredForGit) {
-  fs.appendFileSync("./.gitignore", `\n${destinationDir}/*.min.css`);
-}
+fs.writeFileSync(`./${destinationDir}/.gitignore`, "*.min.css");
 
 const barrelFileContent = `@import url(./themes.min.css);
 @import url(./paces.min.css);
