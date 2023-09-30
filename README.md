@@ -586,7 +586,7 @@ Once you run the above commands with preferred arguments, StyleWiz will generate
 - public
   - stylesheets
     - style-wiz
-      - colors.min.css
+      - themes.min.css
       - curves.min.css
       - paces.min.css
       - shadows.min.css
@@ -597,7 +597,7 @@ Once you run the above commands with preferred arguments, StyleWiz will generate
 all the files with `public/stylesheets/style-wiz/*.min.css` format was automatically added to `.gitignore` by StyleWiz. There is also a barrel file(index.css) which contains the below content:
 
 ```css
-@import url(./colors.min.css);
+@import url(./themes.min.css);
 @import url(./paces.min.css);
 @import url(./curves.min.css);
 @import url(./shadows.min.css);

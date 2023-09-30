@@ -33,10 +33,10 @@ Here is a full list of available props in order to get the most out of this comp
 <!-- Links: -->
 
 [Colors]: ../colors.md
-[Spacings]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.d.ts#L3
-[Paces]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.d.ts#L32
-[Shadows]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.d.ts#L30
-[Curves]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.d.ts#L23
+[Spacings]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.ts#L3
+[Paces]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.ts#L32
+[Shadows]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.ts#L30
+[Curves]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.ts#L23
 [BorderSide]: https://github.com/milad-afkhami/style-wiz/blob/main/src/components/Div/props.ts#L4-L10
 [Dimensions]: https://github.com/milad-afkhami/style-wiz/blob/main/src/components/Div/props.ts#L11-L18
 [FlexProps]: https://github.com/milad-afkhami/style-wiz/blob/main/src/components/Div/props.ts#L22-L27

@@ -22,8 +22,8 @@ Here is a full list of available props in order to get the most out of this comp
 
 <!-- Links: -->
 
-[Typography]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.d.ts#L20
-[Colors]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.d.ts#L11
+[Typography]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.ts#L20
+[Colors]: https://github.com/milad-afkhami/style-wiz/blob/main/src/typings/stylesheets.ts#L11
 [MDN/text-transform]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform#values
 [MDN/user-select]: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#values
 [MDN/text-align]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align#values
