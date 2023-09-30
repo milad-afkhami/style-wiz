@@ -2,7 +2,7 @@
  * @see https://commitlint.js.org/#/reference-configuration
  * @type {import("@commitlint/types").UserConfig}
  */
-const Configuration = {
+const configuration = {
   extends: ["@commitlint/config-conventional"],
   /**
    * Any rules defined here will override rules from @commitlint/config-conventional
@@ -51,4 +51,4 @@ const Configuration = {
   ],
 };
 
-module.exports = Configuration;
+export default configuration;
