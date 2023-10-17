@@ -7,7 +7,7 @@ import type {
   Shadows,
   Paces,
 } from "../../typings/stylesheets";
-import type { Nullishable } from "../../typings/utilities";
+import type { Nullishable } from "ts-wiz";
 
 type BorderSide =
   | "left"
