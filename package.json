@@ -23,7 +23,9 @@
     "lint": "eslint ./src --ext .ts,.tsx --config .eslintrc --fix",
     "format": "prettier --write .",
     "semantic-release": "semantic-release",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "patch": "npm version patch -m \"chore: patch package version to %s\"",
+    "publish:manual": "yarn patch && git push && npm publish"
   },
   "keywords": [
     "react",
