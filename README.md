@@ -1,8 +1,7 @@
 # Style Wiz
 
-<img src="./docs/cover.jpg" height="400px" style="margin: auto; display: block;" />
+<img src="./docs/cover.jpg" height="400" />
 
-<br/>
 
 Powerful CSS-in-JS and build-time stylesheets tool designed to simplify CSS-in-JS Developer experience and streamline the process of generating minified CSS files at build-time tailored for your needs.
 
