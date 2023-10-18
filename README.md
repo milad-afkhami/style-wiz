@@ -1,6 +1,8 @@
 # Style Wiz
 
-<img src="./docs/cover.jpg" style="max-height: 400px; max-width: 100%; margin: auto; display: block; margin-bottom: 0.5rem;" />
+<p align="center">
+  <img src="./docs/cover.jpg" height="400" />
+</p>
 
 Powerful CSS-in-JS and build-time stylesheets tool designed to simplify CSS-in-JS Developer experience and streamline the process of generating minified CSS files at build-time tailored for your needs.
 
