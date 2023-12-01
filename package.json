@@ -26,7 +26,8 @@
     "prepare": "husky install",
     "patch": "npm version patch -m \"chore: patch package version to %s\"",
     "minor": "npm version minor -m \"chore: minor package version to %s\"",
-    "publish:manual": "yarn patch && git push && npm publish"
+    "release:patch": "yarn patch && git push && npm publish",
+    "release:minor": "yarn minor && git push && npm publish"
   },
   "keywords": [
     "react",
