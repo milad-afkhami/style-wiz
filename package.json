@@ -2,7 +2,7 @@
   "private": false,
   "name": "style-wiz",
   "description": "Powerful CSS-in-JS and build-time stylesheets tool designed to simplify CSS-in-JS Developer experience and streamline the process of generating minified CSS files at build-time tailored for your needs.",
-  "version": "0.3.7-canary.1",
+  "version": "0.3.7-canary.2",
   "main": "./dist/index.js",
   "type": "module",
   "module": "./dist/index.cjs.js",
