@@ -1,7 +1,7 @@
 import CSSVariableHelper from "./cssVar";
 import type DivProps from "../components/Div/props";
 import type { Spacings } from "../typings/stylesheets";
-import type { Maybe } from "../typings/utilities";
+import type { Maybe } from "ts-wiz";
 
 interface PrepareSpacing {
   (param: NonNullable<DivProps["m"]>): Maybe<string>;

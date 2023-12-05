@@ -7,7 +7,7 @@ import type {
   Shadows,
   Paces,
 } from "../../typings/stylesheets";
-import type { Nullishable } from "../../typings/utilities";
+import type { Nullishable } from "ts-wiz";
 
 type BorderSide =
   | "left"
@@ -24,7 +24,7 @@ type Dimensions = {
   insetInlineStart?: Spacings;
   insetInlineEnd?: Spacings;
 };
-// type ResponsiveProps = DynamicDictionary<MediaFeatures, DivProps>;
+// type ResponsiveProps = Record<MediaFeatures, DivProps>;
 
 // Flex/Grid
 type FlexProps = [
