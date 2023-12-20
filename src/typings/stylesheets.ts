@@ -22,6 +22,7 @@ export type Curves = "xlg" | "lg" | "md" | "sm" | "xsm" | "xxsm" | "circle" | tr
  * md: elevation 4
  * lg: elevation 8
  * xlg: elevation 20 */
-export type Shadows = "sm" | "md" | "lg" | "xlg" | true | false;
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type Shadows = "sm" | "md" | "lg" | "xlg" | (string & {});
 
 export type Paces = "x-fast" | "fast" | "normal" | "slow" | "x-slow";
